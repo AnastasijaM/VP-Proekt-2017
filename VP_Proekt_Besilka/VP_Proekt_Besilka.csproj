@@ -130,13 +130,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\DatabaseBesilka.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\DatabaseBesilka_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DatabaseBesilka.mdf</DependentUpon>
-    </Content>
     <Content Include="bin\Debug\VP_Proekt_Besilka.vshost.exe" />
     <None Include="sad_face.jpg" />
     <None Include="congrats-frame.jpg" />
