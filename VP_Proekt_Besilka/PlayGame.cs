@@ -18,6 +18,7 @@ namespace VP_Proekt_Besilka
         public int points { get; set; }
         private int misses;
         private Graphics g;
+        private bool isLost;
 
         public PlayGame(Form1 form)
         {
@@ -25,6 +26,7 @@ namespace VP_Proekt_Besilka
             DoubleBuffered = true;
             g = panel1.CreateGraphics();
             Form1 homeWindow = form;
+            isLost = false;
             selectedCategory = homeWindow.selectedCategory;
            
                 wordToGuess = homeWindow.newGame.GetWordFromCategory(selectedCategory).Word.ToUpper();
@@ -45,12 +47,13 @@ namespace VP_Proekt_Besilka
 
             
             misses = 0;
+            labelCategory.Text = selectedCategory.Name;
            
         }
 
         protected void guessLetter(Button buttonLetter)
         {
-
+           
             char letterSuggestion = buttonLetter.Text[0];
             List<int> positions = findCharInWord(letterSuggestion);
             if (positions.Count > 0)
@@ -69,14 +72,15 @@ namespace VP_Proekt_Besilka
                 points -= 1;
             }
             buttonLetter.Enabled = false;
-
-            if (IsWholeWordGuesed())
+            LostGame();
+            if (isLost== false && IsWholeWordGuesed())
             {
                 CongratsForm cf = new CongratsForm(points);
                 cf.ShowDialog();
-                //
                 this.Close();
             }
+            
+
         }
 
         private void drawMiss(int miss)
@@ -112,7 +116,7 @@ namespace VP_Proekt_Besilka
                 //draw other arm
                 g.DrawLine(pen, 60, 140, 90, 100);
             }
-            LostGame();
+            
             pen.Dispose();
         }
 
@@ -304,19 +308,46 @@ namespace VP_Proekt_Besilka
         {
             if (misses >= 6)
             {
-                GameOver gameOver = new GameOver();
+                GameOver gameOver = new GameOver(wordToGuess);
                 gameOver.ShowDialog();
                 this.Close();
+                isLost= true;
+                
             }
+            
         }
 
         private void PlayGame_Paint(object sender, PaintEventArgs e)
         {
+            //crtnje na besilkata
             Pen pen = new Pen(Color.White,3);
             g.DrawLine(pen, 10, 10, 65, 10);
             g.DrawLine(pen, 10, 10, 10, 250);
             g.DrawLine(pen, 65, 10, 65, 30);
             pen.Dispose();
+        }
+
+        private void buttonHint_Click(object sender, EventArgs e)
+        {
+            List<int> nepogodeniPozicii = new List<int>();
+            for (int i = 0; i < labelsLetters.Count(); i++)
+            {
+                if (labelsLetters[i].Text == "- ")
+                {
+                    nepogodeniPozicii.Add(i);
+                }
+            }
+
+            Random r = new Random();
+            if (nepogodeniPozicii != null)
+            {
+                int index = r.Next(0, nepogodeniPozicii.Count);
+                int position = nepogodeniPozicii[index];
+                labelsLetters[position].Text = wordToGuess[position].ToString();
+                buttonHint.Enabled = false;
+                points -= 5;
+            }
+            
         }
     }
 }

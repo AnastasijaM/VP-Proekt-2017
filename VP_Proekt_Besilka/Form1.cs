@@ -29,6 +29,7 @@ namespace VP_Proekt_Besilka
             selectedCategory = listBoxCategories.SelectedItem as Category;
             PlayGame newGame = new PlayGame(this);
             newGame.Show();
+            
         }
     }
 }

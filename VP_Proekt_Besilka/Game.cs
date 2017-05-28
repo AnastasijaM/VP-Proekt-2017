@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VP_Proekt_Besilka
 {
-    [Serializable]
+    
     public class Game
     {
         public List<Category> Categories;
@@ -104,6 +104,7 @@ namespace VP_Proekt_Besilka
             Words.Add(w19);
 
         }
+        
 
     }
 }

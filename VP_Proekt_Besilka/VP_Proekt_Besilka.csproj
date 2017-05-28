@@ -115,6 +115,7 @@
     <None Include="bin\Debug\VP_Proekt_Besilka.exe.config" />
     <None Include="bin\Debug\VP_Proekt_Besilka.vshost.exe.config" />
     <None Include="bin\Debug\VP_Proekt_Besilka.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

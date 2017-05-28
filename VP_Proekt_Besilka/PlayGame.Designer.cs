@@ -63,6 +63,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCategory = new System.Windows.Forms.Label();
+            this.buttonHint = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -498,6 +501,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(654, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Категорија:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelCategory
+            // 
+            this.labelCategory.AutoSize = true;
+            this.labelCategory.BackColor = System.Drawing.Color.Transparent;
+            this.labelCategory.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategory.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCategory.Location = new System.Drawing.Point(755, 56);
+            this.labelCategory.Name = "labelCategory";
+            this.labelCategory.Size = new System.Drawing.Size(0, 20);
+            this.labelCategory.TabIndex = 65;
+            // 
+            // buttonHint
+            // 
+            this.buttonHint.BackColor = System.Drawing.Color.White;
+            this.buttonHint.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHint.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.buttonHint.Location = new System.Drawing.Point(771, 100);
+            this.buttonHint.Name = "buttonHint";
+            this.buttonHint.Size = new System.Drawing.Size(95, 46);
+            this.buttonHint.TabIndex = 66;
+            this.buttonHint.Text = "HINT";
+            this.buttonHint.UseVisualStyleBackColor = false;
+            this.buttonHint.Click += new System.EventHandler(this.buttonHint_Click);
+            // 
             // PlayGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -505,6 +545,9 @@
             this.BackgroundImage = global::VP_Proekt_Besilka.Properties.Resources.blackboard_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(934, 635);
+            this.Controls.Add(this.buttonHint);
+            this.Controls.Add(this.labelCategory);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.buttonC);
@@ -545,6 +588,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -584,5 +628,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCategory;
+        private System.Windows.Forms.Button buttonHint;
     }
 }

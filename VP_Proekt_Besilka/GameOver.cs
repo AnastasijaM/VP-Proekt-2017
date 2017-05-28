@@ -12,9 +12,17 @@ namespace VP_Proekt_Besilka
 {
     public partial class GameOver : Form
     {
-        public GameOver()
+        public GameOver(string word)
         {
             InitializeComponent();
+            labelWord.Text = word;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form = new Form1();
+            form.Show();
         }
     }
 }
