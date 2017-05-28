@@ -131,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\VP_Proekt_Besilka.vshost.exe" />
+    <Content Include="screenshots\congrats.png" />
+    <Content Include="screenshots\game_over.png" />
+    <Content Include="screenshots\play_game.png" />
+    <Content Include="screenshots\poceten_ekran.png" />
     <None Include="sad_face.jpg" />
     <None Include="congrats-frame.jpg" />
     <None Include="blackboard-1.png" />
